@@ -20,6 +20,8 @@ class CreateArticlesTable extends Migration
             $table->text('abstract');
             $table->text('picture');
             $table->year('publication_year');
+            $table->unsignedBigInteger('author_id');
+            $table->foreign('author_id')->references('id')->on('authors');
             $table->timestamps();
         });
     }
